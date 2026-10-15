@@ -172,7 +172,7 @@ const plugins = [vitePluginPublicPlatformConfig(), react(), tailwindcss(), jsxLo
 
 export default defineConfig({
   plugins,
-  base: process.env.VITE_BASE || "/",
+  base: process.env.GITHUB_ACTIONS === "true" ? "/DigiGeek-Social-links/" : "/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
