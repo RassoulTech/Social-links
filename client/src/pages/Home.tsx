@@ -27,7 +27,8 @@ import { QRCodeSVG } from "qrcode.react";
 import { siTiktok, siWhatsapp } from "simple-icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const PAGE_URL = "https://digigeek.manus.space/";
+const PAGE_URL = "https://rassoultech.github.io/Social-links/";
+const ASSET_BASE = import.meta.env.BASE_URL;
 const WHATSAPP_URL = "https://wa.me/773831364?text=Bonjour%20Mouhamed%2C%20je%20viens%20de%20voir%20ta%20carte%20DigiGeek.";
 
 function SimpleBrandIcon({ path, title }: { path: string; title: string }) {
@@ -113,7 +114,7 @@ function makeVCard() {
     "ORG:DigiGeek",
     "TITLE:Développeur full stack · Entrepreneur digital · Créateur de contenu tech",
     "NOTE:Créateur de DigiGeek, une marque dédiée à la tech et aux solutions digitales.",
-    "URL:https://digigeek.manus.space/",
+    `URL:${PAGE_URL}`,
     "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/mouhamed-dione-60428a335",
     "X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/mouhameddione69/",
     "X-SOCIALPROFILE;TYPE=tiktok:https://www.tiktok.com/@sa_xel_mooy_sa_koom",
@@ -266,6 +267,29 @@ export default function Home() {
         </section>
 
         <div className="content-stack">
+          <section className="film-card" aria-labelledby="film-title">
+            <div className="film-heading">
+              <div>
+                <span className="section-index">00 / BRAND FILM</span>
+                <h2 id="film-title">Une identité en mouvement.</h2>
+              </div>
+              <span className="film-meta">18s · 9:16</span>
+            </div>
+            <div className="film-frame">
+              <video
+                className="brand-film"
+                controls
+                playsInline
+                preload="metadata"
+                poster={`${ASSET_BASE}assets/digigeek-card-reference.png`}
+                aria-label="Film de présentation de Mouhamed Dione et DigiGeek"
+              >
+                <source src={`${ASSET_BASE}assets/digigeek-brand-film.mp4`} type="video/mp4" />
+                Votre navigateur ne prend pas en charge la lecture vidéo.
+              </video>
+            </div>
+            <p className="film-caption">Mouhamed Dione × DigiGeek — une identité personnelle, une marque en mouvement.</p>
+          </section>
           <section className="brand-card" aria-labelledby="brand-title">
             <div className="section-heading compact-heading">
               <div>
